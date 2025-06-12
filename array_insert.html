@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Array Insert</title>
+    <script>
+        const handelSubmit = () => {
+            let newEl = parseInt(document.getElementById("newEl").value);
+            let pos = parseInt(document.getElementById("pos").value);
+            let data = [2, 3, 44, 32, 90, 34, 334];
+
+            // Validate position
+            if (pos < 0 || pos > data.length) {
+                alert("Invalid position!");
+                return;
+            }
+
+            // Insert element at position
+            for (let i = data.length - 1; i >= pos; i--) {
+                data[i + 1] = data[i];
+            }
+            data[pos] = newEl;
+
+            // Show updated array
+            document.getElementById("result").innerText = "Updated Array: " + data.join(", ");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Insert Data into Array</h1>
+
+    <input style="padding: 5px; border: 2px solid gray; width: 50%;" type="number" id="newEl"
+        placeholder="Enter Your New Element...">
+    <br><br>
+    <input style="padding: 5px; border: 2px solid gray; width: 50%;" type="number" id="pos"
+        placeholder="Enter Element Position...">
+    <br><br>
+    <button onclick="handelSubmit()">Submit</button>
+
+    <p id="result" style="margin-top: 20px; font-weight: bold;"></p>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Array Search</title>
+    <script>
+        // let data = [23, 3, 4, 54, 65, 34, 67, 88, 30, 45];
+        // let item = 67;
+        // let index = undefined;
+        // for (let i = 0; i < data.length; i++) {
+        //     if (data[i] === item) {
+        //         index = i;
+        //     }
+        // }
+        // console.log(index)
+
+        function Search() {
+            let data = [23, 3, 4, 54, 65, 34, 67, 88, 30, 45];
+            let item = parseInt(document.getElementById('element').value);
+            let index = undefined;
+            // console.log(item)
+            if (!isNaN(item)) {
+                for (let i = 0; i < data.length; i++) {
+                    if (data[i] === item) {
+                        index = i;
+                        break;
+                    }
+                }
+                console.log(index);
+            } else {
+                console.log("Please Enter a valid value...")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Find Your Element Position..</h1>
+    <br>
+    <input type="text" name="element" id="element" placeholder="Enter Your Element...">
+    <br><br>
+    <button onclick="Search()">Search</button>
+</body>
+
+</html>
